@@ -4,6 +4,7 @@ import jwt
 
 app = Flask(__name__)
 
+
 @app.route("/sso/clove")
 def sso_clove():
     # If the user is not logged in, store the fact that the request came from Clove
@@ -18,8 +19,7 @@ def sso_clove():
 
 
 def verify_domain(domain):
-    valid = domain == "preview.cloveapp.io" or domain.endswith(
-        ".mycompany.com")
+    valid = domain == "preview.cloveapp.io" or domain.endswith(".mycompany.com")
 
     if not valid:
         raise Exception("Invalid hub_domain")
@@ -52,4 +52,4 @@ def secret():
 
 
 if secret() == None:
-  raise Exception("SSO_SECRET is not set")
+    raise Exception("SSO_SECRET is not set")
