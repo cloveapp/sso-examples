@@ -17,3 +17,9 @@ This is an example app demonstrating how to integrate with [Clove's SSO](https:/
 
 * export SSO_SECRET=SHARED_SECRET_FROM_CLOVE
 * `flask run`
+
+# Notes
+
+The `verify_domain/1` function should be adjusted with your production instance URL. We recommend
+verifying the `hub_domain` parameter to prevent redirection vulnerabilities. Always include
+`preview.cloveapp.io` to enable Clove's preview feature.
